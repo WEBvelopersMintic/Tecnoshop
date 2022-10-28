@@ -24,5 +24,25 @@
             "stock": 10,
             "imagen": "monitor.jpg"
         }
+    ],
+    "ventas":[
+        {
+            "fecha": "10/10/2022",
+            "IdVenta": "0001",
+            "valor": 100000,
+            "articulos": 1
+        },
+        {
+            "fecha": "20/10/2022",
+            "IdVenta": "0002",
+            "valor": 200000,
+            "articulos": 1
+        },
+        {
+            "fecha": "11/10/2022",
+            "IdVenta": "0003",
+            "valor": 50000,
+            "articulos": 1
+        }
     ]
 }

@@ -5,52 +5,51 @@ import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import React,{useState,useEffect} from 'react';
 import data from './../../api/productos.json'
+import { useLocation } from 'react-router-dom';
 
 function ListarProductos(){
-    console.log(data.productos);
     const {productos} = data;
-    console.log(productos);
+    const location= useLocation()
+
+    console.log("productos--->", productos);
+
+    const goTo = () => {
+        if(location.pathname.includes("admin") ){
+            console.log("soy administrador");
+        }else{
+            console.log("soy cliente");
+
+        }
+    }
+
 
     return (
         <Container>
             <Row><h1>Lista Productos</h1></Row>
             <Row>
-                <Col>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
-                            <Card.Title>Mouse Gamer</Card.Title>
-                            <Card.Text>
-                                Mouse Gamer de alta eficiencia y es RGB.
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
-                            <Card.Title>Mouse Gamer</Card.Title>
-                            <Card.Text>
-                                Mouse Gamer de alta eficiencia y es RGB.
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
-                            <Card.Title>Mouse Gamer</Card.Title>
-                            <Card.Text>
-                                Mouse Gamer de alta eficiencia y es RGB.
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
+                {
+                    productos && productos.length > 0 && productos.map((producto) =>
+                    <Col>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="holder.js/100px180" />
+                            <Card.Body>
+                                <Card.Title>{producto.nombre}</Card.Title>
+                                <Card.Text>
+                                    <p>{producto.descripcion}</p>
+                                    <p>{producto.precio}</p>
+                                </Card.Text>
+                                <Button variant="primary" onClick={goTo}>
+                                    {
+                                        //aqui es un condicional para verificar si es administrador o cliente. El label del boton cambia segun esta funcionalidad
+                                        location.pathname.includes("admin") ? 'Modificar' : 'Comprar'
+                                    }
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    
+                    )
+                }
             </Row>
         </Container>
     );

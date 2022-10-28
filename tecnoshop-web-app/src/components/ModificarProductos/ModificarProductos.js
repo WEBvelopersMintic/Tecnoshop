@@ -9,7 +9,7 @@ function ModificarProductos(){
     return (
         <Container>
             <Row className="mb-3">
-                <h1>Crear productos</h1>
+                <h1>Modificar productos</h1>
             </Row>
             <Row className="justify-content-center">
                 <Col xs={4}>
