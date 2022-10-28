@@ -1,0 +1,28 @@
+{
+    "productos": [
+        {
+            "idProducto": 1,
+            "nombre": "Mouse Gamer",
+            "descripcion": "Mouse para desarolladores y gamers",
+            "precio": 100000,
+            "stock": 50,
+            "imagen": "mouse.jpg"
+        },
+        {
+            "idProducto": 2,
+            "nombre": "Teclado Gamer",
+            "descripcion": "teclado para desarolladores y gamers",
+            "precio": 100000,
+            "stock": 40,
+            "imagen": "teclado.jpg"
+        },
+        {
+            "idProducto": 3,
+            "nombre": "Monitor",
+            "descripcion": "Monitor para desarolladores y gamers",
+            "precio": 100000,
+            "stock": 10,
+            "imagen": "monitor.jpg"
+        }
+    ]
+}

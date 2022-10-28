@@ -3,8 +3,14 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
+import React,{useState,useEffect} from 'react';
+import data from './../../api/productos.json'
 
 function ListarProductos(){
+    console.log(data.productos);
+    const {productos} = data;
+    console.log(productos);
+
     return (
         <Container>
             <Row><h1>Lista Productos</h1></Row>
